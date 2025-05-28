@@ -8,7 +8,8 @@ version <- 5
 source(here::here("source", "common.R"), echo = FALSE)
 
 # import C++ functions
-cpp_file <- paste0(name, "_", tidy_int_string(version, width = 2), ".cpp")
+grow_polygon <- NULL # hack to shut the lintr up
+cpp_file <- "polygon.cpp"
 Rcpp::sourceCpp(here::here("source", cpp_file))
 
 # functions ---------------------------------------------------------------
@@ -185,6 +186,7 @@ art_generator <- function(seed) {
 
 # make art ----------------------------------------------------------------
 
-seeds <- default_seeds(version) - 100
+#seeds <- default_seeds(version)
+seeds <- 500
 for(s in seeds) art_generator(s)
 

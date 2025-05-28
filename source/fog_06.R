@@ -8,6 +8,7 @@ version <- 6
 source(here::here("source", "common.R"), echo = FALSE)
 
 # import C++ functions
+grow_polygon <- NULL # hack to shut the lintr up
 cpp_file <- "polygon.cpp"
 Rcpp::sourceCpp(here::here("source", cpp_file))
 
